@@ -212,3 +212,20 @@ __marimo__/
 
 # pid file
 *.pid
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Editor swap/backup files
+*~
+*.swp
+*.swo
+
+# IDE settings (add if you don't want to share workspace settings)
+.idea/
+.vscode/
+
+# Optional: pin file from pyenv/uv; ignore if you don't want it versioned
+.python-version
+# uv.lock  # uncomment only if you choose not to commit it
