@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "sedlib"
+abstract: "A Python library for Spectral Energy Distribution (SED) analysis of astronomical objects. Provides comprehensive tools for analyzing stellar spectral energy distributions, including photometric data management, filter handling, SED analysis and fitting with blackbody models and extinction correction, bolometric corrections for accurate stellar radius determination, and advanced optimization for interstellar extinction correction."
+version: "1.0.0"
+date-released: 2024-01-01
+authors:
+  - family-names: OKUYAN
+    given-names: Oğuzhan
+    email: ookuyan@gmail.com
+    affiliation: TÜBİTAK
+    orcid: https://orcid.org/0000-0001-7311-9211
+repository-code: "https://github.com/ookuyan/sedlib"
+url: "https://github.com/ookuyan/sedlib"
+keywords:
+  - astrophysics
+  - software
+  - spectral-energy-distribution
+  - stellar-physics
+  - photometry
+  - bolometric-correction
+  - extinction
+license: Apache-2.0
+doi: 10.5281/zenodo.17332608
+preferred-citation:
+  type: software
+  authors:
+    - family-names: OKUYAN
+      given-names: Oğuzhan
+  title: "sedlib: A Python library for Spectral Energy Distribution analysis"
+  version: "1.0.0"
+  date-released: 2024-01-01
+  url: "https://github.com/ookuyan/sedlib"
