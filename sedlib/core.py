@@ -5819,7 +5819,7 @@ class SED(object):
                 # Convert any spaces or special characters to underscores
                 name = self._user_provided_name.replace(' ', '_')
                 name = name.replace('/', '_').replace('\\', '_')
-                actual_save_path = f"sedlib/tmp/{timestamp}-{name}.sed"
+                actual_save_path = f"{timestamp}-{name}.sed"
             
             if verbose:
                 compressed_suffix = '.zip' if save_compressed else ''

@@ -11,6 +11,7 @@ from io import BytesIO
 from fnmatch import fnmatch
 import requests
 from pathlib import Path
+from importlib import resources
 
 from bs4 import BeautifulSoup
 from typing import Optional, Union, List, Any
@@ -373,20 +374,23 @@ class Filter:
         return float(self.WavelengthEff.value) <= float(object.WavelengthEff.value)
 
     def _prepare(self) -> None:
-        meta_path = os.path.join(
-            'sedlib', 'filter', 'data', 'svo_meta_data.xml'
-        )
-
-        with open(meta_path, 'r') as f:
-            self._meta_xml = BeautifulSoup(f, features='lxml')
-
-        catalog_path = os.path.join(
-            'sedlib', 'filter', 'data',
-            # 'svo_filter_catalog.pickle',
-            'svo_all_filter_database.pickle'
-        )
-
-        self._catalog = pd.read_pickle(catalog_path)
+        # Use importlib.resources to access package data files
+        try:
+            # For Python 3.9+
+            meta_file = resources.files('sedlib.filter.data').joinpath('svo_meta_data.xml')
+            with meta_file.open('r') as f:
+                self._meta_xml = BeautifulSoup(f, features='lxml')
+            
+            catalog_file = resources.files('sedlib.filter.data').joinpath('svo_all_filter_database.pickle')
+            with catalog_file.open('rb') as f:
+                self._catalog = pd.read_pickle(f)
+        except AttributeError:
+            # Fallback for Python 3.7-3.8 using older API
+            with resources.open_text('sedlib.filter.data', 'svo_meta_data.xml') as f:
+                self._meta_xml = BeautifulSoup(f, features='lxml')
+            
+            with resources.open_binary('sedlib.filter.data', 'svo_all_filter_database.pickle') as f:
+                self._catalog = pd.read_pickle(f)
 
     def _parse_xml(self) -> None:
         if self._xml is None:

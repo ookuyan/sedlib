@@ -90,7 +90,7 @@ Repository = "https://github.com/ookuyan/sedlib"
 Documentation = "https://github.com/ookuyan/sedlib"
 
 [tool.setuptools]
-packages = ["sedlib", "sedlib.filter"]
+packages = ["sedlib", "sedlib.filter", "sedlib.filter.data", "sedlib.data"]
 
 [tool.setuptools.package-data]
 sedlib = [
