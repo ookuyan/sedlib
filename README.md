@@ -2,9 +2,10 @@
 
 A Python library for Spectral Energy Distribution (SED) analysis of single stars.
 
+[![PyPI version](https://img.shields.io/pypi/v/sedlib.svg)](https://pypi.org/project/sedlib/)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17332608.svg)](https://doi.org/10.5281/zenodo.17332608)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![Astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat&logo=astro)](https://www.astropy.org/)
 
 ## Table of Contents
@@ -12,7 +13,7 @@ A Python library for Spectral Energy Distribution (SED) analysis of single stars
 - [1. Overview](#1-overview)
 - [2. Installation](#2-installation)
   - [2.1. Prerequisites](#21-prerequisites)
-  - [2.2. Install from PyPI (when available)](#22-install-from-pypi-when-available)
+  - [2.2. Install from PyPI](#22-install-from-pypi)
   - [2.3. Install from source](#23-install-from-source)
   - [2.4. Dependencies](#24-dependencies)
 - [3. Quick Start](#3-quick-start)
@@ -64,13 +65,23 @@ sedlib provides comprehensive tools for analyzing stellar spectral energy distri
 - Python 3.8 or higher
 - pip package manager
 
-### 2.2. Install from PyPI (when available)
+### 2.2. Install from PyPI
+
+The easiest way to install sedlib is directly from PyPI using pip:
 
 ```bash
 pip install sedlib
 ```
 
+To upgrade to the latest version:
+
+```bash
+pip install --upgrade sedlib
+```
+
 ### 2.3. Install from source
+
+For development or to access the latest unreleased features:
 
 ```bash
 git clone https://github.com/ookuyan/sedlib.git
