@@ -19,7 +19,7 @@ Author:
     ookuyan@gmail.com, oguzhan.okuyan@tubitak.gov.tr
 
 Version:
-    1.0.0
+    1.0.1
 
 License:
     Apache License 2.0
@@ -27,7 +27,7 @@ License:
 
 __author__ = 'Oğuzhan OKUYAN'
 __license__ = 'Apache License 2.0'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __maintainer__ = 'Oğuzhan OKUYAN'
 __email__ = 'ookuyan@gmail.com, oguzhan.okuyan@tubitak.gov.tr'
 __description__ = "A Python library for Spectral Energy Distribution analysis"

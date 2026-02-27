@@ -46,6 +46,7 @@ A Python library for Spectral Energy Distribution (SED) analysis of single stars
   - [7.3. Acknowledgments](#73-acknowledgments)
 - [8. Changelog](#8-changelog)
   - [8.1. Version 1.0.0](#81-version-100)
+  - [8.2. Version 1.0.1](#82-version-101)
 
 ## 1. Overview
 
@@ -540,7 +541,7 @@ Or cite the GitHub repository:
   title = {sedlib: A Python library for Spectral Energy Distribution analysis},
   year = {2024},
   url = {https://github.com/ookuyan/sedlib},
-  version = {1.0.0}
+  version = {1.0.1}
 }
 ```
 
@@ -561,3 +562,6 @@ Or cite the GitHub repository:
 - Monte Carlo uncertainty estimation
 - Interactive plotting capabilities
 - Project save/load functionality
+
+### 8.2. Version 1.0.1
+- Bug fixes

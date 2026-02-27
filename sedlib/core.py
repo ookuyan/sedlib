@@ -392,9 +392,9 @@ class SED(object):
         self._radius_lower = None
         self._radius_upper = None
         self._ext_model = None
-        self._ebv = None
-        self._ebv_error = None
-        self._ebv_rms = None
+        self._ebv = 0.0
+        self._ebv_error = 0.0
+        self._ebv_rms = 0.0
         self._logg = None
         self._logg_error = None
         self._teff = None
@@ -4436,26 +4436,27 @@ class SED(object):
             
             print("-" * 30 + "\n")
         
+        # store the extinction model for later use
+        self.ext_model = ext_model
+
         # accept the result
         if accept:
             if method in ["grid_search", "minimize"]:
                 self.ebv = result['ebv']
                 self.ebv_error = result['ebv_error']
                 self.ext_model = ext_model
+                self._logger.info(
+                    f"END - E(B-V) estimation complete: "
+                    f"{self.ebv:.4f} ± {self.ebv_error:.4f}"
+                )
             if method in ["mc"]:
                 self.ebv = result['ebv_mean']
                 self.ebv_error = result['ebv_std']
                 self.ext_model = ext_model
-            
-            self._logger.debug(
-                f"Storing E(B-V) result in SED object: "
-                f"{self.ebv:.4f} ± {self.ebv_error:.4f}"
-            )
-
-        self._logger.info(
-            f"END - E(B-V) estimation complete: "
-            f"{self.ebv:.4f} ± {self.ebv_error:.4f}"
-        )
+                self._logger.info(
+                    f"END - E(B-V) estimation complete: "
+                    f"{self.ebv:.4f} ± {self.ebv_error:.4f}"
+                )
 
         # Success status based on E(B-V) value and error
         if method in ["grid_search", "minimize"]:
@@ -4595,8 +4596,14 @@ class SED(object):
             "compute_A_lambda: Setting format for A_lambda and A_lambda_err "
             "columns"
         )
-        self.catalog.table['A_lambda'].info.format = '.3f'
-        self.catalog.table['A_lambda_err'].info.format = '.3f'
+
+        try:
+            self.catalog.table['A_lambda'].info.format = '.3f'
+            self.catalog.table['A_lambda_err'].info.format = '.3f'
+        except ValueError:
+            self._logger.warning(
+                "compute_A_lambda: Unable to set format for A_lambda and A_lambda_err columns"
+            )
 
         self._logger.info(
             "compute_A_lambda: end - Completed calculating A_lambda values for "
@@ -4968,8 +4975,14 @@ class SED(object):
             "compute_absolute_magnitudes: Setting format for abs_mag and "
             "abs_mag_err columns"
         )
-        self.catalog.table['abs_mag'].info.format = '.3f'
-        self.catalog.table['abs_mag_err'].info.format = '.3f'
+
+        try:
+            self.catalog.table['abs_mag'].info.format = '.3f'
+            self.catalog.table['abs_mag_err'].info.format = '.3f'
+        except ValueError:
+            self._logger.warning(
+                "compute_absolute_magnitudes: Unable to set format for abs_mag and abs_mag_err columns"
+            )
 
         self._logger.info(
             "END - Successfully computed absolute magnitudes"
