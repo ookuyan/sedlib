@@ -4,7 +4,7 @@ A Python library for Spectral Energy Distribution (SED) analysis of single stars
 
 [![PyPI version](https://img.shields.io/pypi/v/sedlib.svg)](https://pypi.org/project/sedlib/)
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17332608.svg)](https://doi.org/10.5281/zenodo.17332608)
+[![DOI](https://img.shields.io/badge/DOI-10.1016%2Fj.asr.2026.03.029-blue.svg)](https://doi.org/10.1016/j.asr.2026.03.029)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Astropy](https://img.shields.io/badge/powered%20by-AstroPy-orange.svg?style=flat&logo=astro)](https://www.astropy.org/)
 
@@ -518,6 +518,25 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 ### 7.2. Citation
 
 If you use sedlib in your research, please cite:
+
+```bibtex
+@ARTICLE{2026AdSpR..77.9868O,
+       author = {{Okuyan}, O{\u{g}}uzhan and {Bak{\i}{\textcommabelow s}}, Volkan and {Eker}, Zeki},
+        title = "{Determining accurate radii and luminosities using multiband BC for LAMOST stars within 500 pc}",
+      journal = {Advances in Space Research},
+     keywords = {Stars: fundamental parameters, Stars: masses, Stars: radii, Methods: data analysis},
+         year = 2026,
+        month = may,
+       volume = {77},
+       number = {9},
+        pages = {9868-9882},
+          doi = {10.1016/j.asr.2026.03.029},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2026AdSpR..77.9868O},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
+
+Software citation:
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17332608.svg)](https://doi.org/10.5281/zenodo.17332608)
 

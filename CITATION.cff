@@ -23,11 +23,21 @@ keywords:
 license: Apache-2.0
 doi: 10.5281/zenodo.17332608
 preferred-citation:
-  type: software
+  type: article
   authors:
-    - family-names: OKUYAN
+    - family-names: Okuyan
       given-names: Oğuzhan
-  title: "sedlib: A Python library for Spectral Energy Distribution analysis"
-  version: "1.0.1"
-  date-released: 2026-02-27
-  url: "https://github.com/ookuyan/sedlib"
+    - family-names: Bakıș
+      given-names: Volkan
+    - family-names: Eker
+      given-names: Zeki
+  title: "Determining accurate radii and luminosities using multiband BC for LAMOST stars within 500 pc"
+  journal: "Advances in Space Research"
+  year: 2026
+  month: 5
+  volume: 77
+  issue: 9
+  start: 9868
+  end: 9882
+  doi: 10.1016/j.asr.2026.03.029
+  url: "https://ui.adsabs.harvard.edu/abs/2026AdSpR..77.9868O"
